@@ -1,0 +1,27 @@
+.article-layout-tldr {
+    border: 1px solid darkgray;
+    width: fit-content;
+}
+
+.article-layout-tldr > h4 {
+    margin-top: -12px;
+    margin-left: 10px;
+    padding-left: 5px;
+    width: 42px;
+    background: #fff;
+}
+
+.article-layout-tldr > p {
+    margin-top: -10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.article-layout-tldr-link {
+    text-decoration: none;
+    color: black;
+}
+
+.article-layout-content {
+    max-width: 600px;
+}

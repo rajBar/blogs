@@ -1,0 +1,13 @@
+---
+layout: null
+files:
+ - layouts/home.css
+ - layouts/article-layout.css
+ - includes/masthead.css
+ - site.css
+---
+{% for file in page.files %}
+
+{% include_relative {{ file }} %}
+
+{% endfor %}

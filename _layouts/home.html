@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+    {% include masthead.html %}
+    <section class="main">
+
+        <h2>News Articles</h2>
+        <div class="news-list">
+            {% assign items = site.pages | sort: "date_created" | reverse %}
+            {% for item in items %}
+                {% if item.layout == "article" %}
+                    <div class="news-list-item">
+                        <a class="news-list-item-image" href="{{ item.url | relative_url }}">
+                            <img src="{{ '/assets/images/' | append: item.photo | relative_url }}">
+                        </a>
+                        <a class="news-list-item-content" href="{{ item.url | relative_url }}">
+                            <time>
+                                {{ item.date_created | date: "%d %B %Y" }}
+                            </time>
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.summary }}</p>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </section>
+</body>
+</html>

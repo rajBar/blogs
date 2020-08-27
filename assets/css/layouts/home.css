@@ -1,0 +1,39 @@
+.news-list {
+    max-width: 500px;
+}
+
+.news-list-item {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.news-list-item-image {
+    flex: 0 0;
+}
+
+.news-list-item-image > img {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.news-list-item-content {
+    flex: 1 1 100%;
+    margin-left: 1.25rem;
+    margin-top: 13px;
+    text-decoration: none;
+    color: black;
+}
+
+.news-list-item-content > time {
+    font-size: 12px;
+}
+
+.news-list-item-content > h3 {
+    margin: 0;
+}
+
+.news-list-item-content > p {
+    margin: 0;
+    font-size: 14px;
+}
