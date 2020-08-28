@@ -16,7 +16,7 @@ tldr: |
     - Software development environment is perfect - unix > windows
     ### Cons
     - Pricey
-    #### The laptop is incredible. But if you don't need a mac specifically for what it offers i.e. you'll be browsing and making presentation/spreadsheet/written documents. Save yourself some money and get a Chromebook - trust me, they're much better value for money
+    #### The laptop is incredible. But if you don't need a mac specifically for what it offers i.e. you'll be browsing the web and making presentation/spreadsheet/written documents. Save yourself some money and get a Chromebook - trust me, they're much better value for money
     ## The iPhone 11 pro
     ### Pros
     - Security
