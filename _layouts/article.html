@@ -10,7 +10,7 @@
         {% if page.tldr %}
             <div class="article-layout-tldr">
                 <h4>tl;dr</h4>
-                <p><a class="article-layout-tldr-link" href="#tdlr">(Too long didn't read) - press here to get the tl;dr</a></p>
+                <p><a class="article-layout-tldr-link" href="#tldr">(Too long didn't read) - press here to get the tl;dr</a></p>
             </div>
         {% endif %}
 
@@ -19,10 +19,10 @@
         </div>
 
         {% if page.tldr %}
-        <div class="article-layout-tldr tldr">
-            <a name="tldr"></a>
+        <div id="tldr" class="article-layout-tldr-bottom-padding"></div>
+        <div class="article-layout-tldr">
             <h4>tl;dr</h4>
-            <p>{{ page.tldr | markdownify }}</p>
+            {{ page.tldr | markdownify }}
         </div>
         {% endif %}
     </div>

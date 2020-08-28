@@ -5,6 +5,42 @@ photo: apple-devices.jpg
 summary: |
     My journey from an Apple free life, to owning a Mac, iPhone and Apple Watch.
 url: /articles/apples-and-oranges
+tldr: |
+    - Too Long; Didn't Read
+    ## The Macbook 2019 16"
+    ### Pros
+    - Quality feeling product
+    - Touch bar is surprisingly useful
+    - Touch pad is big and brilliant
+    - Battery is phenomenal
+    - Software development environment is perfect - unix > windows
+    ### Cons
+    - Pricey
+    #### The laptop is incredible. But if you don't need a mac specifically for what it offers i.e. you'll be browsing and making presentation/spreadsheet/written documents. Save yourself some money and get a Chromebook - trust me, they're much better value for money
+    ## The iPhone 11 pro
+    ### Pros
+    - Security
+    - FaceID
+    - Shake to Undo
+    - One handed mode
+    ### Cons
+    - Home screen isn't customisable (apps or widgets)
+    - Ringing takes whole screen
+    - Floating Video not available
+    - Split screen/floating apps not available
+    - Notifications are awful
+    - There isn't an always on display
+    #### I feel like I've taken a step backwards in mobile technology from the Google Pixel 2 XL - which had it's own downfalls
+    ## The Apple Watch Series 5
+    ### Pros
+    - Apple pay
+    - Fantastic screen
+    - Waterproof technology is top quality
+    - Loads of applications available and they're optimised for the watch
+    ### Cons
+    - You need an iPhone
+    - Does anyone even need a wearable?
+    #### This would be the only reason I considered keeping an iPhone... but I just can't do it to myself. So unfortunately it'll be goodbye to the watch
 date_created: 2020-08-26
 ---
 
