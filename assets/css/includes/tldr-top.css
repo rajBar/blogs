@@ -1,8 +1,4 @@
-.article-layout {
-    max-width: 750px;
-}
-
-.article-layout-tldr {
+.tldr-top-include {
     border: 1px solid darkgray;
     width: fit-content;
     max-width: 500px;
@@ -10,7 +6,7 @@
     margin-right: auto;
 }
 
-.article-layout-tldr > h4 {
+.tldr-top-include > h4 {
     margin-top: -12px;
     margin-left: 10px;
     padding-left: 5px;
@@ -18,22 +14,18 @@
     background: #fff;
 }
 
-.article-layout-tldr > a {
+.tldr-top-include > a {
     margin: 0;
     padding: 0;
 }
 
-.article-layout-tldr > p {
+.tldr-top-include > p {
     margin-top: -10px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.article-layout-tldr-link {
+.tldr-top-include-link {
     text-decoration: none;
     color: black;
-}
-
-.article-layout-tldr-bottom-padding {
-    padding-top: 30px;
 }

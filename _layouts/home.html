@@ -5,11 +5,11 @@
     {% include masthead.html %}
     <section class="main">
 
-        <h2>News Articles</h2>
+        <h2>Blog Posts</h2>
         <div class="news-list">
             {% assign items = site.pages | sort: "date_created" | reverse %}
             {% for item in items %}
-                {% if item.layout == "article" %}
+                {% if item.layout == "blog" %}
                     <div class="news-list-item">
                         <a class="news-list-item-image" href="{{ item.url | relative_url }}">
                             <img src="{{ '/assets/images/' | append: item.photo | relative_url }}">

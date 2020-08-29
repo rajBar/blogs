@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: blog
 title: Apples and Oranges
 photo: apple-devices.jpg
 summary: |

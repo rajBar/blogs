@@ -19,6 +19,11 @@
     vertical-align: top;
 }
 
+.masthead-title-link {
+    text-decoration: none;
+    color: black;
+}
+
 .masthead-splitter {
     width: 100%;
     border-bottom: 1px solid black;

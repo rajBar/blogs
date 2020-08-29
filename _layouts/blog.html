@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+{% include masthead.html %}
+<section class="main">
+
+    <h2>{{ page.title }}</h2>
+    <div class="blog-layout">
+        {% if page.tldr %}
+            {% include tldr-top.html %}
+        {% endif %}
+
+        <div class="blog-layout-content">
+            {{ content }}
+        </div>
+
+        {% if page.tldr %}
+            {% include tldr-bottom.html %}
+        {% endif %}
+    </div>
+
+</section>
+</body>
+</html>
