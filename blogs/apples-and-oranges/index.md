@@ -23,13 +23,20 @@ tldr: |
     - FaceID
     - Shake to Undo
     - One handed mode
+    - Airdrop
     ### Cons
-    - Home screen isn't customisable (apps or widgets)
+    - Apps cannot go anywhere on home screen
+    - Can't put widgets on home screen
+    - Widgets can be accessed without logging in
+    - App folders only hold 9 before going onto another page
     - Ringing takes whole screen
     - Floating Video not available
     - Split screen/floating apps not available
     - Notifications are awful
     - There isn't an always on display
+    - Switching between loud/vibrate/silent is slow
+    - Dark mode hides the time on loads of apps
+    - No shortcut to 'Do Not Disturb'
     #### I feel like I've taken a step backwards in mobile technology from the Google Pixel 2 XL - which had it's own downfalls
     ## The Apple Watch Series 5
     ### Pros
