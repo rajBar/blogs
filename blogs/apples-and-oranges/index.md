@@ -4,7 +4,7 @@ title: Apples and Oranges
 photo: apple-devices.jpg
 summary: |
     My journey from an Apple free life, to owning a Mac, iPhone and Apple Watch.
-url: /articles/apples-and-oranges
+url: /blogs/apples-and-oranges
 tldr: |
     - Too Long; Didn't Read
     ## The Macbook 2019 16"

@@ -1,5 +1,15 @@
 .blog-layout {
+    margin-top: 35px;
     max-width: 750px;
+}
+
+.blog-layout-header {
+    margin-bottom: 0;
+}
+
+.blog-layout-date {
+    padding-bottom: 15px;
+    font-size: 12px;
 }
 
 .blog-layout-content img {

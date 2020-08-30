@@ -5,7 +5,11 @@
 {% include masthead.html %}
 <section class="main">
 
-    <h2>{{ page.title }}</h2>
+    <h2 class="blog-layout-header">{{ page.title }}</h2>
+    <time class="blog-layout-date">
+        Date created: {{ page.date_created | date: "%d %B %Y" }}
+    </time>
+
     <div class="blog-layout">
         {% if page.tldr %}
             {% include tldr-top.html %}
