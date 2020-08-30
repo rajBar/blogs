@@ -1,0 +1,6 @@
+<h2 class="header-include-title">{{ page.title }}</h2>
+{% if page.date_created %}
+    <time class="header-include-date">
+        Date created: {{ page.date_created | date: "%d %B %Y" }}
+    </time>
+{% endif %}

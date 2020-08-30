@@ -3,6 +3,7 @@ layout: null
 files:
  - layouts/home.css
  - layouts/blog-layout.css
+ - includes/header.css
  - includes/masthead.css
  - includes/tldr-top.css
  - includes/tldr-bottom.css
