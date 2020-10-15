@@ -19,7 +19,7 @@
     vertical-align: top;
 }
 
-.masthead-title-link {
+.masthead-title > a {
     text-decoration: none;
     color: black;
 }
