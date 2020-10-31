@@ -21,7 +21,7 @@ word - duathlon. The idea was to run 30km and cycle 100km over a month. We all a
 we decided to use use Nike Run Club for the running board and then add the cycle distance - as a developer I felt sick. I decided to work on accessing the 
 strava API and automating the whole thing
 
-^ was the above really neccessary? Probably not... right into the tutorial
+^ was the above really neccessary? Probably not. Right, into the tutorial...
 
 ## The Tutorial
 
@@ -35,6 +35,7 @@ The first thing you'll need to do is enable API access to your Strava account.
 1. Log into your account [here](https://www.strava.com/).
 1. Change the url from https://www.strava.com/ to [https://www.strava.com/settings/api/](https://www.strava.com/settings/api/)
 1. Create an 'Application' - honestly here, just put random placeholder information
+
 Right, you've enabled API access on your account and you should now be able to view your **Client ID**, **Client Secret**, 
 **Access Token** and **Refresh Token**
 
@@ -78,7 +79,7 @@ You'll get returned some JSON that looks like this:
         "city": null,
         "state": null,
         "country": null,
-        "sex": "M",
+        "sex": "<m/f>",
         "premium": false,
         "summit": false,
         "created_at": "sometime",
@@ -92,4 +93,120 @@ You'll get returned some JSON that looks like this:
 }
 ```
 
-There are two intersting things here, the **access_token 
+There are two intersting things here, the **refresh_token** and the**access_token**.
+- Access Token
+    - This is the end goal. This is what we need to be able to access our data. However, these are very short lived (about 30 mins of use). So we need
+ to be able to refresh this from time to time. If only there were a refresh token
+- Refresh Token
+    - this is actually what we want right now. It is long lived and allows us to utilise our other long lived credentials to acquire an access token
+ whenever we want one
+ 
+### Getting the data
+Right we technically have all the data that we need to get our activities. But there is a (very) short workflow required to access said data:
+1. Use Refresh Token to generate Access Token.
+1. Use Access Token to fetch activity data.
+ 
+#### Getting the Access Token
+The first request we're going to make takes the following details:
+1. POST request
+1. Client ID
+1. Client Secret
+1. Refresh Token
+ 
+Put the above information into the URL below and put it in Postman (don't forget to make it a POST request)
+- https://www.strava.com/oauth/token?client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+
+You'll get returned some JSON that looks like this:
+```js
+{
+    "token_type": "Bearer",
+    "access_token": "<ACCESS_TOKEN>",
+    "expires_at": 1604157714,
+    "expires_in": 14350,
+    "refresh_token": "<REFRESH_TOKEN>"
+}
+```
+
+This request returns some JSON, and inlcuded is the **access_token** - exactly what we'll need to finally get our data.
+
+#### Getting OUR Strava data - finally
+The final request that we need to make takes the following details:
+1. GET request
+1. AccessToken
+
+Run using the info populate the URL below and run in Postman
+- https://www.strava.com/api/v3/athlete/activities?access_token=<ACCESS_TOKEN>
+
+You should now see all your activity data, in JSON, ready for you to use in whatever application you want
+
+### Codified for JavaScript
+The following pattern was use in my original project. The new project doesn't use the same pattern for some glaring security reasons... but we'll get into that
+
+```js
+const fetchData = async (clientID, secret, refreshToken) => {
+    let stravaData;
+    const authLink = "https://www.strava.com/oauth/token";
+    let token = "";
+
+    await fetch(authLink, {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            client_id: clientID,
+            client_secret: secret,
+            refresh_token: refreshToken,
+            grant_type: "refresh_token",
+        })
+    }).then(res => res.json())
+        .then(res => token = res.access_token);
+
+    const activitiesLink = "https://www.strava.com/api/v3/athlete/activities?per_page=200&access_token=" + token;
+    await fetch(activitiesLink)
+        .then(res => res.json())
+        .then(res => {
+            stravaData = res;
+        });
+    return stravaData;
+};
+```
+
+The code above effectively uses pre-stored data about a user - client_id, client_secret & refresh_token - to get the short lived access token and return the users
+activity data from Strava.
+
+You can embed the above code into a simple JS (I used React) application to fetch your data. You can create an array of objects as follows:
+```js
+const users = {
+    raj: {
+        athleteID: "<ALTHETE_ID>",
+        info: {
+            id: "<CLIENT_ID>",
+            secret: "<CLIENT_SECRET>",
+            refresh: "<REFRESH_TOK>",
+        }
+    },
+    ross: {
+        athleteID: "53092595",
+        info: {
+            id: "<CLIENT_ID>",
+            secret: "<CLIENT_SECRET>",
+            refresh: "<REFRESH_TOK>",
+        }
+    },
+    cally: {
+        athleteID: "59236853",
+        info: {
+            id: "<CLIENT_ID>",
+            secret: "<CLIENT_SECRET>",
+            refresh: "<REFRESH_TOK>",
+        }
+    }
+};
+```
+Then iterate through this list calling the `fetchData()` method. Once you have all the data you can play around with visualisation libs, and display the data however you want.
+
+Feel free to look at my [example](https://raj.bar/strava), and feel free to look at my [code](https://github.com/rajBar/strava)
+
+### Don't use the code above though...
